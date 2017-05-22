@@ -32,18 +32,11 @@ class CreateExcel:
 	#	Change header dimensions
 	######
 	def update_cell_dimensions(self, height, *width):
-		######
-		#	Update in future to be more dynamic
-		#	For now, usage case is very specific
-		######
-		self.ws.column_dimensions["A"].width = 15
-		self.ws.column_dimensions["B"].width = 28
-		self.ws.column_dimensions["C"].width = 28
-		self.ws.column_dimensions["D"].width = 18
-		self.ws.column_dimensions["E"].width = 18
-		self.ws.column_dimensions["F"].width = 33
+		for x in range(len(width)):
+			column = get_column_letter(x+1)
+			self.ws.column_dimensions[column].width = width[x]
 		
-		self.ws.row_dimensions[1].height = height
+		self.ws.row_dimensions[self.round_number].height = height
 	
 	######
 	#	Input cell values and format

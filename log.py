@@ -22,17 +22,10 @@ class Log:
 			return False
 		else:
 			self.file_path = file_path
-		
-		######
-		#	If logging level is unspecified, default to WARNING
-		######
-		if logging_level is None:
-			self.log_level = "logging.INFO"
-		else:
-			self.log_level = logging_level
-		
+
 		######
 		#	If file name is unspecified, default to generic name
+		#	Currently, logging level always INFO
 		######
 		if file_name is None:
 			try:

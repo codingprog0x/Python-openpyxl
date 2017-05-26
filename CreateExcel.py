@@ -2,7 +2,7 @@
 ######
 #	Module for creating and saving an Excel file
 ######
-'''
+''' 
 
 from openpyxl import Workbook
 from openpyxl.formatting import Rule
